@@ -13,16 +13,16 @@ function renderButtons() {
         // var for creating a button
         var animalBtn = $("<button>");
         // adds class
-        animalBtn.addClass("animal btn btn-secondary btn-sm");
+        animalBtn.addClass("animal btn btn-success btn-sm");
         // adds data attribute
         animalBtn.attr("data-name", animals[i]);
         // provides text to the button
         animalBtn.text(animals[i]);
         // adds the button to html
         $("#buttons-animals").append(animalBtn);
+        $("#animal-input").text()
     }
 }
-
 
 function displayGifInfo() {
 
@@ -45,7 +45,7 @@ function displayGifInfo() {
     console.log(response);
         
     // Storing an array of results in the results variable
-    var results = response.data;
+    var results = response.animalData;
 
       // looping through animal results
       for (var i = 0; i < results.length; i++) {
