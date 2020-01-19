@@ -5,17 +5,22 @@
   <meta charset="utf-8">
   <title>GifTastic</title>
 
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-  <script src="assets/javascript/app.js"></script>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+ 
 </head>
 
 <body>
-  
-  <!--animal entry div-->
-  <div id="buttons-animals"></div>
-
+  <div class = "container">
+      <h1>GifTastic</h1>
+      <br>
+    <!--animal entry div-->
+    <div id="buttons-animals"></div>
+  </div>
+  <br>
 <div class = "container">
     <div class = "row">
         <!--gif div-->
@@ -29,12 +34,12 @@
                 <label for="animal-input">Add an animal</label>
                 <input type="text" class="form-control" id="animal-input">  
                 </div>
-                <button type="submit" id="add-animal" class="btn btn-primary">Submit</button>
+                <button type="submit" id="add-animal" class="btn btn-secondary btn-sm">Submit</button>
             </form>
         </div>
     </div>
 </div>
-
+    <script src="assets/javascript/app.js"></script>
 </body>
 
 </html>

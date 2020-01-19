@@ -1,4 +1,3 @@
-
 // array of starting animals
 var animals = ["dog", "cat", "kangaroo", "ostrich", "bird", "camel", "turtle", "hamster", "goose"]
 
@@ -14,41 +13,25 @@ function renderButtons() {
         // var for creating a button
         var animalBtn = $("<button>");
         // adds class
-        animalBtn.addClass("animal");
+        animalBtn.addClass("animal btn btn-secondary btn-sm");
         // adds data attribute
         animalBtn.attr("data-name", animals[i]);
         // provides text to the button
-        animalBtn.text(movies[i]);
+        animalBtn.text(animals[i]);
         // adds the button to html
         $("#buttons-animals").append(animalBtn);
     }
 }
 
-// on click event to trigger ajax call
-$("#add-animal").on("click", function(event) {
-
-    // prevents the form from trying to submit itself
-    event.preventDefault();
-
-    // grabs animal name to create a button. Value, lower case and remove white space
-    var animal = $("#animal-input").val().lowerCase().trim();
-
-    // animal is sent to array
-    animals.push(animal);
-    console.log(animals);
-    
-    //renderButtons
-    renderButtons();
-});
 
 function displayGifInfo() {
 
     // when animal is entered in search bar, it searches this animal for the attributes requested
-    var animalData = $(this).attr("#animal-input");
-
+    var animalData = $(this).attr("data-name");
+    
     // queryURL for Giphy API
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-    animal + "&api_key=EtOjyyjV4C6sFsomZOJOvzCzDfURjFqA";
+    animal + "&api_key=EtOjyyjV4C6sFsomZOJOvzCzDfURjFqA&limit=10";
 
     // Get request using AJAX
     $.ajax({
@@ -61,11 +44,13 @@ function displayGifInfo() {
     console.log(queryURL);
     console.log(response);
         
-        // Storing an array of results in the results variable
-        var results = response.data;
+    // Storing an array of results in the results variable
+    var results = response.data;
 
-        // looping through animal results
-        for (var i = 0; i < results.length; i++) {
+      // looping through animal results
+      for (var i = 0; i < results.length; i++) {
+        // setting the rating for the gifs
+        if (results[i].rating !== "r" && results[i].rating !== "pg-13") {
             // creating a div tag and storing it
             var animalDiv = $("<div>");
             // creating an area for text and to display the rating
@@ -79,5 +64,31 @@ function displayGifInfo() {
             animalDiv.append(gif)
             $("#gif-div").prepend(animalDiv);
         }
+      }
     });
 };
+
+
+
+// on click event to trigger ajax call
+$("#add-animal").on("click", function() {
+
+    // prevents the form from trying to submit itself
+    event.preventDefault();
+
+    // grabs animal name to create a button. Value, lower case and remove white space
+    var animal = $("#animal-input").val().trim();
+
+    // animal is sent to array
+    animals.push(animal);
+    console.log(animals);
+    
+    //renderButtons
+    renderButtons();
+});
+
+// click event listener
+$(document).on("click", ".add-animal", displayGifInfo);
+
+renderButtons();
+
