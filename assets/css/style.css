@@ -2,3 +2,10 @@ button {
     margin: 5px !important;
   
 }
+
+.rainbow {
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(4, 254,144)), color-stop(0.05, rgb(255, 241, 82)), color-stop(0.1, rgb(255, 91, 90)), color-stop(0.15, rgb(0, 199, 255)), color-stop(0.2, rgb(142, 47, 255)) )!important;
+    color:transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+  }
