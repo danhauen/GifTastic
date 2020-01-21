@@ -12,6 +12,8 @@ function renderButtons() {
         for (var i = 0; i < animals.length; i++) {
             // var for creating a button
             var animalBtn = $("<button>");
+            // clears input box
+            $("#animal-input").val("");
             // adds class
             animalBtn.addClass("btn animal-btn btn-success btn-sm");
             // adds data attribute and places in the array
@@ -41,6 +43,8 @@ function displayGifInfo() {
         }) .then(function(response) {
             console.log(response);
             var results = response.data;
+            // clear previous gifs
+            $("#gifs-view").html(" ");
         
      // looping through animal results (var a)
     for (var a = 0; a < results.length; a++) {
@@ -75,7 +79,6 @@ function displayGifInfo() {
                 animals.push(animalName);
                 //renderButtons
                 renderButtons();
-                
             });
 
 
