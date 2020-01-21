@@ -14,6 +14,7 @@
 </head>
 
 <body>
+<!--header with rainbow title in css with Giphy colors-->
 <div class = "container-fluid bg-dark">
     <div class="row header-row  sticky-top">  
         <div class="col-10 mx-auto pl-5">
@@ -23,31 +24,33 @@
 </div>
 
 <br>
-     <!--animal entry div-->
+     <!--area where animal buttons created are placed-->
     <div class="row btn-row"> 
-        <div class="container" id="buttons-animals"></div>
+        <div class="container" value = "data-animal" id="buttons"></div>
     </div>
     <br>
     <br>
 
 <div class = "container">
     <div class = "row">
-        <!--gif div-->
+        <!--Area where gifs are placed when generated-->
         <div class = "col 10">         
-        <div id="gif-div"></div>
+        <div id="gifs-view"></div>
         </div>
-        <!--input area-->
         <div class = "col 1">
             <form>
+                 <!--input new animal-->
                 <div class="form-group animal-form">
                 <label for="animal-input">Add an animal</label>
                 <input type="text" class="form-control" id="animal-input">  
                 </div>
-                <button type="submit" id="add-animal" class="btn btn-success btn-sm">Submit</button>
+                <!--submit btn for adding a new button-->
+                <input class="btn animal-btn btn-success btn-sm" type="submit" value="Submit" id="add-animal">
             </form>
         </div>
     </div>
 </div>
+    <!--js.script src-->
     <script src="assets/javascript/app.js"></script>
 </body>
 

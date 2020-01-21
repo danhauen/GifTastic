@@ -4,7 +4,8 @@ button {
 }
 
 .rainbow {
-    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(4, 254,144)), color-stop(0.05, rgb(255, 241, 82)), color-stop(0.1, rgb(255, 91, 90)), color-stop(0.15, rgb(0, 199, 255)), color-stop(0.2, rgb(142, 47, 255)) )!important;
+    background-image: -webkit-gradient( linear, left top, right top, color-stop(0, rgb(3, 255, 139)), color-stop(0.05, rgb(255, 241, 81)), color-stop(0.10, rgb(255, 91, 90)), color-stop(0.15, rgb(0, 199, 255)), color-stop(0.20, rgb(144, 46, 255)), color-stop(0.25, rgb(3, 255, 139)), color-stop(0.30, rgb(255, 241, 81)), color-stop(0.35, rgb(255, 91, 90)), color-stop(0.40, rgb(0, 199, 255)), color-stop(0.45, rgb(144, 46, 255)), color-stop(0.50, rgb(3, 255, 139)), color-stop(0.55, rgb(255, 241, 81)), color-stop(0.60, rgb(255, 91, 90)) ) !important;
+   width: auto;
     color:transparent;
     -webkit-background-clip: text;
     background-clip: text;
