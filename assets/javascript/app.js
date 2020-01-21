@@ -58,8 +58,8 @@ function displayGifInfo() {
                     // using the src attributes for the display of the gifs
                     gif.attr("src", results[a].images.fixed_height.url);
                     // displays them in the div
-                    gifDiv.prepend(p);
-                    gifDiv.prepend(gif)
+                    gifDiv.append(p);
+                    gifDiv.append(gif)
                     $("#gifs-view").prepend(gifDiv);
                 }
             }
@@ -83,7 +83,7 @@ function displayGifInfo() {
 
 
             // click event listener
-           $(document).on("click", ".animal-btn", displayGifInfo());
+           $(document).on("click", ".animal-btn", displayGifInfo);
 
             renderButtons();
 
