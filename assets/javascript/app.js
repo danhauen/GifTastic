@@ -1,6 +1,6 @@
 $(document).ready(function() {
 // array of starting animals
-var animals = ["dog", "cat", "kangaroo", "ostrich", "bird", "camel", "turtle", "hamster", "goose"]
+var animals = ["dog", "cat", "kangaroo", "ostrich", "bird", "camel", "turtle", "hamster", "goose"];
 
 
 
@@ -43,7 +43,7 @@ function displayGifInfo() {
             var results = response.data;
         
      // looping through animal results (var a)
-    for (var a = 0; a < results[a].length; a++) {
+    for (var a = 0; a < results.length; a++) {
 
             // setting the rating for the gifs
             if (results[a].rating !== "r" && results[a].rating !== "pg-13") {
@@ -75,8 +75,7 @@ function displayGifInfo() {
                 animals.push(animalName);
                 //renderButtons
                 renderButtons();
-                // display gifs on page
-                displayGifInfo();
+                
             });
 
 
