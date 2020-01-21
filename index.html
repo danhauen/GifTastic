@@ -15,10 +15,11 @@
 
 <body>
 <!--header with rainbow title in css with Giphy colors-->
-<div class = "container-fluid bg-dark">
-    <div class="row header-row  sticky-top">  
+<div class = "container-fluid bg-dark border-bottom border-danger">
+    <div class="row header-row">  
         <div class="col-10 mx-auto pl-5">
             <h1 class="header rainbow">GifTastic</h1>
+            </span>
         </div>
     </div>
 </div>
@@ -34,12 +35,10 @@
 <div class = "container">
     <div class = "row">
         <!--Area where gifs are placed when generated-->
-        <div class = "col 10">         
-        <div id="gifs-view"></div>
-        </div>
-        <div class = "col 1">
+        <div class = "col-9" id="gifs-view"></div>
+        <!--input new animal-->
+        <div class = "col-3-lg col-12-sm ml-4 pl-5">
             <form>
-                 <!--input new animal-->
                 <div class="form-group animal-form">
                 <label for="animal-input">Add an animal</label>
                 <input type="text" class="form-control" id="animal-input">  

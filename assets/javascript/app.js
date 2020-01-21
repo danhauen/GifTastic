@@ -33,7 +33,7 @@ function displayGifInfo() {
     // queryURL for Giphy API
     var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=EtOjyyjV4C6sFsomZOJOvzCzDfURjFqA&q=" + animal + "&limit=10&offset=0&rating=PG-13&lang=en";
 
-    // Get request using AJAX
+    // AJAX
         $.ajax({
           url: queryURL,
           method: "GET"
@@ -66,24 +66,24 @@ function displayGifInfo() {
         });
 };
 
-    // on click event to trigger ajax call
-    $("#add-animal").on("click", function() {
-        event.preventDefault();
-        // grabs animal name to create a button. Value, lower case and remove white space
-        var animalName = $("#animal-input").val().trim();
-        // animal is sent to array
-        animals.push(animalName);
-        //renderButtons
-        renderButtons();
-        // display gifs on page
-        displayGifInfo();
-    });
+            // on click event to trigger ajax call
+            $("#add-animal").on("click", function() {
+                event.preventDefault();
+                // grabs animal name to create a button. Value, lower case and remove white space
+                var animalName = $("#animal-input").val().trim();
+                // animal is sent to array
+                animals.push(animalName);
+                //renderButtons
+                renderButtons();
+                // display gifs on page
+                displayGifInfo();
+            });
 
 
 
 
             // click event listener
-           $(document).on("click", ".animal-btn", displayGifInfo);
+           $(document).on("click", ".animal-btn", displayGifInfo());
 
             renderButtons();
 
