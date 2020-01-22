@@ -38,7 +38,6 @@ $(document).ready(function () {
             method: "GET"
             // data comes back from the API
         }).then(function (response) {
-            console.log(response);
             var results = response.data;
             console.log(results);
             // clear previous gifs
@@ -51,53 +50,62 @@ $(document).ready(function () {
                 if (results[a].rating !== "r" && results[a].rating !== "pg-13") {
                     // div to hold the gifs
                     var gifDiv = $("<div>");
-                    gifDiv.addClass("giphy");
+                    gifDiv.addClass(".giphy");
                     // Storing an array of results in the results variable
                     var rating = results[a].rating;
                     // creating an area for text and to display the rating
                     var p = $("<p>").text("Rating: " + results[a].rating);
-                    // creating an area for the gif and a place to display it
-                    var gif = $("<img>");
+
                     // using the src attributes for the display of the gifs
                     var animated = results[a].images.fixed_height.url;
                     var still = results[a].images.fixed_height_still.url;
-                    // creating attributes for still and animated
-                    gif.attr("src", animated);
-                    gif.attr("src", still);
-                    gif.attr("data-animate", animated);
-                    gif.attr("data-still", still);
+
+                    // creating var gif attributes for still and animated
+                    var gif = $("<img>").addClass("giphy").attr({
+                        "src": still,
+                        "data-still": still,
+                        "data-animate": animated,
+                        "data-state": "still"
+                    });
+
                     // displays them in the div
                     gifDiv.append(p);
                     gifDiv.append(gif)
                     $("#gifs-view").prepend(gifDiv);
                 }
+                animateGiphy()
+            }
+        });
+    };
+    function animateGiphy() {
+        // On click function for start/stop animation of gifs
+        $(".giphy").on("click", function () {
+            // Var for 
+            var state = $(this).attr("data-state");
+            console.log("gif clicked");
+            if (state === "still") {
+                $(this).attr("src", $(this).attr("data-animate"));
+                $(this).attr("data-state", "animate");
+            } else {
+                $(this).attr("src", $(this).attr("data-still"));
+                $(this).attr("data-state", "still");
             }
         });
     };
 
-    // On click function for start/stop animation of gifs
-    $(".giphy").on("click", function () {
-        // Var for 
-        var state = $(this).attr("data-state");
-
-        if (state === "still") {
-            $(this).attr("src", $(this).attr("data-animate"));
-            $(this).attr("data-state", "animate");
-        } else {
-            $(this).attr("src", $(this).attr("data-still"));
-            $(this).attr("data-state", "still");
-        }
-    });
-
     // on click event to trigger ajax call
     $(".animal-btn").on("click", function () {
         event.preventDefault();
-        // grabs animal name to create a button. Value, lower case and remove white space
-        var animalName = $("#animal-input").val().trim();
-        // animal is sent to array
-        animals.push(animalName);
-        //renderButtons
-        renderButtons();
+        if ($("#animal-input").val() === "") {
+            return;
+        } else {
+            // grabs animal name to create a button. Value, lower case and remove white space
+            var animalName = $("#animal-input").val().trim();
+            // animal is sent to array
+            animals.push(animalName);
+            //renderButtons
+            renderButtons();
+        }
     });
 
     // click event listener
