@@ -73,25 +73,24 @@ $(document).ready(function () {
                     gifDiv.append(gif)
                     $("#gifs-view").prepend(gifDiv);
                 }
-                animateGiphy()
             }
         });
     };
-    function animateGiphy() {
-        // On click function for start/stop animation of gifs
-        $(".giphy").on("click", function () {
-            // Var for 
-            var state = $(this).attr("data-state");
-            console.log("gif clicked");
-            if (state === "still") {
-                $(this).attr("src", $(this).attr("data-animate"));
-                $(this).attr("data-state", "animate");
-            } else {
-                $(this).attr("src", $(this).attr("data-still"));
-                $(this).attr("data-state", "still");
-            }
-        });
-    };
+
+    // On click function for start/stop animation of gifs
+    $("#gifs-view").on("click", ".giphy", function () {
+        // Jquery for still and animate
+        var state = $(this).attr("data-state");
+        if (state === "still") {
+            $(this).attr("src", $(this).attr("data-animate"));
+            $(this).attr("data-state", "animate");
+            console.log("animate");
+        } else {
+            $(this).attr("src", $(this).attr("data-still"));
+            $(this).attr("data-state", "still");
+            console.log("");
+        }
+    });
 
     // on click event to trigger ajax call
     $(".animal-btn").on("click", function () {
@@ -111,5 +110,4 @@ $(document).ready(function () {
     // click event listener
     $(document).on("click", ".new-btn", displayGifInfo);
     renderButtons();
-
 });
