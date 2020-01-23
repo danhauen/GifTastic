@@ -2,53 +2,53 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>GifTastic</title>
+    <meta charset="utf-8">
+    <title>GifTastic</title>
 
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900&display=swap" rel="stylesheet">    
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans:900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 
+
 </head>
 
 <body>
-<!--header with rainbow title in css with Giphy colors-->
-<div class = "container-fluid bg-dark border-bottom border-danger">
-    <div class="row header-row">  
-        <div class="col-10 mx-auto pl-5">
-            <h1 class="header rainbow">GifTastic - Animal Edition</h1>
-            </span>
+    <!--header with rainbow title in css with Giphy colors-->
+    <div class="container-fluid bg-dark border-bottom border-danger">
+        <div class="row header-row  justify-content-sm-center">
+            <div class="col-10">
+                <h1 class="header rainbow m-0">GifTastic</h1>
+            </div>
         </div>
     </div>
-</div>
 
-<br>
-     <!--area where animal buttons created are placed-->
-    <div class="row btn-row"> 
-        <div class="container" value = "data-animal" id="buttons"></div>
-    </div>
     <br>
-    <br>
-
-<div class = "container">
-    <div class = "row">
-        <!--Area where gifs are placed when generated-->
-        <div class ="flex-container col-9" id="gifs-view"></div>
+    <!--area where animal buttons created are placed-->
+    <div class="row btn-row">
+        <div class="container col-lg-7 col-sm-12 pl-4 mt-4 justify-content-sm-end" value="data-animal"id="buttons"></div>
         <!--input new animal-->
-        <div class = "col-3">
-            <form class = "form p-2">
+        <div class="col-lg-3 col-sm-12 pl-5 justify-content-sm-end">
+            <form class="form p-0 mr-5">
                 <div class="form-group animal-form">
-                <label for="animal-input">Add an animal</label>
-                <input type="text" class="form-control" id="animal-input">  
+                    <label for="animal-input" class ="input-header">Add an animal</label>
+                    <input type="text" class="form-control" id="animal-input">
                 </div>
                 <!--submit btn for adding a new button-->
-                <input class="btn animal-btn btn-sm" type="submit" value="Submit" id="add-animal">
+                <input class="btn animal-btn" type="submit" value="Submit" id="add-animal">
             </form>
         </div>
     </div>
-</div>
+    <br>
+    <br>
+
+    <div class="container col-10">
+        <div class="row">
+            <!--Area where gifs are placed when generated-->
+            <div class="container gif-container col-sm-12" id="gifs-view"></div>
+        </div>
+    </div>
     <!--js.script src-->
     <script src="assets/javascript/app.js"></script>
 </body>

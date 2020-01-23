@@ -15,7 +15,7 @@ $(document).ready(function () {
             // clears input box
             $("#animal-input").val("");
             // adds class
-            animalBtn.addClass("btn new-btn btn-sm");
+            animalBtn.addClass("btn new-btn");
             // adds data attribute and places in the array
             animalBtn.attr("data-animal", animals[i]);
             // provides text to the button
@@ -54,7 +54,7 @@ $(document).ready(function () {
                     // Storing an array of results in the results variable
                     var rating = results[a].rating;
                     // creating an area for text and to display the rating
-                    var p = $("<p>").text("Rating: " + results[a].rating);
+                    var p = $("<p>").text("Rated: " + results[a].rating);
 
                     // using the src attributes for the display of the gifs
                     var animated = results[a].images.fixed_height.url;
