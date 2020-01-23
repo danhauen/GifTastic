@@ -15,7 +15,7 @@ $(document).ready(function () {
             // clears input box
             $("#animal-input").val("");
             // adds class
-            animalBtn.addClass("btn new-btn btn-success btn-sm");
+            animalBtn.addClass("btn new-btn btn-sm");
             // adds data attribute and places in the array
             animalBtn.attr("data-animal", animals[i]);
             // provides text to the button

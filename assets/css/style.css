@@ -1,6 +1,19 @@
-button {
+
+
+.animal-btn , .new-btn {
     margin: 5px !important;
+    background-color: rgb(255, 91, 90) !important;
   
+  
+}
+
+.form {
+    border:  rgb(0, 199, 255) !important;
+}
+
+.giphy {
+    border: rgb(0, 199, 255) !important;
+    border-width: thick;
 }
 
 .rainbow {
@@ -11,5 +24,7 @@ button {
     -webkit-background-clip: text;
     background-clip: text;
 }
+
+
 
   
